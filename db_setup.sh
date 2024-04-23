@@ -20,9 +20,9 @@ podman run -d \
   -v "pg-data:/var/lib/postgresql/data" \
   -p "5432:5432" \
   --restart always \
-  postgres:alpine
+  postgres:15.6-alpine
 
-sleep 20 # Ensure enough time for postgres database to initialize and create role
+sleep 30 # Ensure enough time for postgres database to initialize and create role
 
 podman exec -i postgres psql -U $POSTGRES_USER -d sample <<-EOF
 create table employees (
@@ -33,6 +33,7 @@ create table employees (
   gender VARCHAR(50),
   favorite_color VARCHAR(50)
 );
+delete from employees;
 insert into employees (id, first_name, last_name, email, gender, favorite_color) values (1, 'Lauralee', 'Morkham', 'lmorkham0@example.com', 'Female', '#878922');
 insert into employees (id, first_name, last_name, email, gender, favorite_color) values (2, 'Hillery', 'Langland', 'hlangland1@example.com', 'Male', '#6fd569');
 insert into employees (id, first_name, last_name, email, gender, favorite_color) values (3, 'Regan', 'Kroger', 'rkroger2@example.com', 'Male', '#d9c547');
