@@ -1,8 +1,9 @@
 
+import boto3
+import time
+from pgbackup import pgdump, storage, parser
+
 def main():
-    import boto3
-    import time
-    from pgbackup import pgdump, storage, parser
 
     args = parser.create_parser().parse_args()
     dump = pgdump.dump(args.url)
