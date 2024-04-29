@@ -22,7 +22,7 @@ podman run -d \
   --restart always \
   postgres:15.6-alpine
 
-sleep 30 # Ensure enough time for postgres database to initialize and create role
+sleep 20 # Ensure enough time for postgres database to initialize and create role
 
 podman exec -i postgres psql -U $POSTGRES_USER -d sample <<-EOF
 create table employees (
