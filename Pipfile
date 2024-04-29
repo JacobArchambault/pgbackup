@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 boto3 = "*"
 setuptools = "*"
+wheel = "*"
 
 [dev-packages]
 
