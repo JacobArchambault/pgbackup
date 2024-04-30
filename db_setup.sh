@@ -21,7 +21,7 @@ podman run -d \
   -v "pg-data:/var/lib/postgresql/data" \
   -p "5432:5432" \
   --restart always \
-  postgres:15.6-alpine
+  postgres:16.1-alpine
 
 sleep 20 # Ensure enough time for postgres database to initialize and create role
 
