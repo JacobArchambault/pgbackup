@@ -1,5 +1,4 @@
 
-import boto3
 from pgbackup import pgdump, storage, parser
 
 def main():
@@ -8,7 +7,6 @@ def main():
     dump = pgdump.dump(args.url)
     if args.driver == 's3':
         storage.s3(
-            boto3.client('s3'), 
             dump.stdout, 
             args.destination, 
             pgdump.dump_file_name(args.url))
