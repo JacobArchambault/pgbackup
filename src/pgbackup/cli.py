@@ -1,6 +1,5 @@
 
 import boto3
-import time
 from pgbackup import pgdump, storage, parser
 
 def main():
@@ -12,11 +11,7 @@ def main():
             boto3.client('s3'), 
             dump.stdout, 
             args.destination, 
-            pgdump.dump_file_name(
-                args.url, 
-                time.strftime(
-                    "%Y-%m-%dT%H:%M", 
-                    time.localtime())))
+            pgdump.dump_file_name(args.url))
     else:
         storage.local(
             dump.stdout, 
