@@ -4,7 +4,7 @@ import time
 
 def dump(url):
     try:
-        return subprocess.Popen(['pg_dump', url], stdout=subprocess.PIPE)
+        return subprocess.Popen(['pg_dump', url], stdout=subprocess.PIPE).stdout
     except OSError as err:
         print(f"Error: {err}")
         sys.exit(1)
