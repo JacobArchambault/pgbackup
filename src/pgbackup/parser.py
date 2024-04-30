@@ -11,6 +11,6 @@ def create_parser():
     help="How and where to store backup", 
     nargs=2, 
     metavar=("DRIVER", "DESTINATION"),
-    action=DriverAction, 
+    action=driver_action.DriverAction, 
     required=True)
     return parser

@@ -9,6 +9,7 @@ export POSTGRES_PASSWORD=$password
 
 podman rm --force postgres || true
 
+podman rm --force pg-data || true
 echo "Creating database container (and seed 'sample' database)"
 podman volume create pg-data
 podman run -d \
