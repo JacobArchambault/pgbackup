@@ -8,10 +8,16 @@ def main():
     args = parser.create_parser().parse_args()
     dump = pgdump.dump(args.url)
     if args.driver == 's3':
-        client = boto3.client('s3')
-        timestamp = time.strftime("%Y-%m-%dT%H:%M", time.localtime())
-        file_name = pgdump.dump_file_name(args.url, timestamp)
-        storage.s3(client, dump.stdout, args.destination, file_name)
+        storage.s3(
+            boto3.client('s3'), 
+            dump.stdout, 
+            args.destination, 
+            pgdump.dump_file_name(
+                args.url, 
+                time.strftime(
+                    "%Y-%m-%dT%H:%M", 
+                    time.localtime())))
     else:
-        outfile = open(args.destination, 'wb')
-        storage.local(dump.stdout, outfile)
+        storage.local(
+            dump.stdout, 
+            open(args.destination, 'wb'))
