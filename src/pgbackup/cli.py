@@ -11,4 +11,4 @@ def main():
     else:
         storage.local(
             args.url, 
-            open(args.destination, 'wb'))
+            args.destination)

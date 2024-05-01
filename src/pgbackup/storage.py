@@ -1,7 +1,8 @@
 import boto3
 from pgbackup import pgdump
 
-def local(url, outfile):
+def local(url, destination):
+    outfile = open(destination, 'wb')
     infile = pgdump.dump(url)
     outfile.write(infile.read())
     outfile.close()
