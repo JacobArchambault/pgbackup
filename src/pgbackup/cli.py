@@ -2,7 +2,6 @@
 from pgbackup import storage, parser
 
 def main():
-
     args = parser.create_parser().parse_args()
     if args.driver == 's3':
         storage.s3(
