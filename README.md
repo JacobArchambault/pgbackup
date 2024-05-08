@@ -22,8 +22,8 @@ $ pip install --user -e .
 ```
 ## Preparing for Development
 Follow these steps to start developing with this project:
-1. Ensure `pip` and `pipenv` are installed
+1. Ensure `pip` and `micropipenv` are installed
 2. Clone repository: `git clone git@github.com:jacobarchambault/pgbackup`
 3. `cd` into the repository
-4. Activate virtualenv: `pipenv shell`
-5. Install dependencies: `pipenv install`
+4. Create and activate virtualenv: `python -m venv ./venv && source ./venv/bin/activate`
+5. Install dependencies: `micropipenv install`
