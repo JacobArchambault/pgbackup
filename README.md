@@ -49,7 +49,7 @@ To update the list of pinned dependencies provided in requirements.txt, (cf. [li
 1. `pip install pipreqs` (a tool for generating dependencies from your source code) 
 2. `pip install pip-tools` (a tool used to create requirements.txt from requirements.in)
 3. `pipreqs --savepath=requirements.in` (creates a requirements.in file from source code dependencies)
-4. `rm requirements.txt & pip-compile --allow-unsafe --strip-extras --generate-hashes` (auto-generates requirements.txt from requirements.in, with transitive dependencies explicitly stated. `--allow-unsafe` flag is required to include setuptools to handle a legacy issue. See https://stackoverflow.com/a/58864335/10964962 for further information)
+4. `rm requirements.txt & pip-compile --strip-extras --generate-hashes` (auto-generates requirements.txt from requirements.in, with transitive dependencies explicitly stated)
 
 ## About
 This project is forked from https://github.com/linuxacademy/content-python3-sysadmin/tree/master/pgbackup . This version includes the following updates and improvements:
