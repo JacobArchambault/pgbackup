@@ -23,7 +23,7 @@ $ pip install --user -e .
 ### From Wheel
 Wheels are binary files created from python source code and used to distribute python packages. `.whl` files are much smaller than source code. Consequently, they take up less storage and can be transferred over the internet faster than source code. 
 
-This project uses [PDM](https://pdm-project.org/latest/), a powerful python package manager with a strong emphasis on compliance with PEP standards. If pdm is installed, you can build a wheel with `pdm build`. Alternately, you can build with [`build`](https://pypi.org/project/build/), a build back-end agnostic build tool, by running `python -m build` [link](https://stackoverflow.com/a/60416265/10964962). You can then run `pip install ./dist/pgbackup-<etc.>.whl` to install from the wheel just built in your `dist` folder.
+This project uses [PDM](https://pdm-project.org/latest/), a powerful python package manager with a strong emphasis on compliance with PEP standards. If pdm is installed, you can build a wheel with `pdm build`. Alternately, you can build with [`build`](https://pypi.org/project/build/), a [back-end agnostic](https://stackoverflow.com/a/60416265/10964962) build tool, by running `python -m build`. You can then run `pip install ./dist/pgbackup-<etc.>.whl` to install from the wheel just built in your `dist` folder.
 
 ## Preparing for Development
 Follow these steps to start developing with this project:
