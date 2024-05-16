@@ -1,6 +1,8 @@
 import pytest
 from pgbackup.pgdump import dump
 
+url = "postgres://localhost/mydatabase"
+
 class MockPopen:
     def __init__(self, *args, **kwargs):
         pass
@@ -32,11 +34,9 @@ def mock_popen_failure(monkeypatch):
     monkeypatch.setattr("pgbackup.pgdump.Popen", MockPopenFailure)
 
 def test_dump_success(mock_popen_success):
-    url = "postgres://localhost/mydatabase"
-    result = dump(url)
-    assert result == b"mocked stdout"
+    assert dump(url) == b"mocked stdout"
 
 def test_dump_failure(mock_popen_failure):
     with pytest.raises(SystemExit) as excinfo:
-        dump("invalid-url")
+        dump(url)
     assert "mocked stderr" in str(excinfo.value)
