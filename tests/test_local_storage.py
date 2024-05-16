@@ -1,4 +1,3 @@
-import pytest
 from pgbackup import local_storage
 from io import BytesIO
 
