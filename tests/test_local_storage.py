@@ -5,12 +5,9 @@ from io import BytesIO
 url = 'postgresql://user:password@localhost/dbname'
 destination = 'backup.sql'
 
-@pytest.fixture
-def mock_pgdump(mocker):
-    return mocker.patch('pgbackup.pgdump.dump')
-
-def test_backup(mock_pgdump, mocker):
+def test_backup(mocker):
     # Arrange
+    mock_pgdump = mocker.patch('pgbackup.pgdump.dump')
     mock_open = mocker.patch('builtins.open', mocker.mock_open())
     mock_pgdump.return_value = BytesIO(b'simulated database dump')
 
