@@ -59,3 +59,10 @@ This project is forked from https://github.com/linuxacademy/content-python3-sysa
 4. A more comprehensive `README`. 
 5. More targeted imports using `from _ import _ ` over `import _` to decrease project size.
 6. Improved modularity, separating out functions depending on different imports into different files. 
+
+## Running tests
+To run tests from within a virtual environment, you'll need to run the following commands:
+1.  `pip install -e .`
+2. `pip install pytest` to install pytest, a popular python testing framework
+3. `pip install pytest-mock` to install a plugin for pytest allowing the use of `mocker` as a parameter to create mocks.
+4. `pytest ./tests/` to run the test suite
