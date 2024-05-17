@@ -1,8 +1,10 @@
 from boto3 import client
-from pgbackup import pgdump, timestamped_db_name
+from pgbackup import timestamped_db_name, pgdump
+from io import BytesIO
 
 def backup(url, bucket):
-    client('s3').upload_fileobj(
-        pgdump.dump(url), 
-        bucket, 
-        timestamped_db_name.get(url))
+    with BytesIO(pgdump.dump(url)) as data:
+        client('s3').upload_fileobj(
+            data, 
+            bucket, 
+            timestamped_db_name.get(url))

@@ -1,5 +1,4 @@
 from pgbackup import local_storage
-from io import BytesIO
 
 url = 'postgresql://user:password@localhost/dbname'
 destination = 'backup.sql'
@@ -8,7 +7,7 @@ def test_backup(mocker):
     # Arrange
     mock_pgdump = mocker.patch('pgbackup.pgdump.dump')
     mock_open = mocker.patch('builtins.open', mocker.mock_open())
-    mock_pgdump.return_value = BytesIO(b'simulated database dump')
+    mock_pgdump.return_value = b'simulated database dump'
 
     # Act
     local_storage.backup(url, destination)

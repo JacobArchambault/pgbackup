@@ -1,8 +1,7 @@
 from pgbackup import pgdump
 
 def backup(url, destination):
+    dumped = pgdump.dump(url)
     outfile = open(destination, 'wb')
-    infile = pgdump.dump(url)
-    outfile.write(infile.read())
+    outfile.write(dumped)
     outfile.close()
-    infile.close()
