@@ -1,5 +1,4 @@
 from subprocess import Popen, PIPE
-from sys import exit
 
 def dump(url):
     try:
