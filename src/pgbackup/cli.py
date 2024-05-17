@@ -1,13 +1,7 @@
 
-from pgbackup import s3_storage, parser, local_storage
+from pgbackup import parser, driver_action_dictionary
+
 
 def main():
     args = parser.create_parser().parse_args()
-    if args.driver == 's3':
-        s3_storage.backup(
-            args.url, 
-            args.destination)
-    else:
-        local_storage.backup(
-            args.url, 
-            args.destination)
+    driver_action_dictionary.driver_actions[args.driver](args.url, args.destination)
