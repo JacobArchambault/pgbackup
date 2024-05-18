@@ -1,6 +1,6 @@
 from boto3 import client
-from pgbackup import timestamped_db_name, pgdump
 from io import BytesIO
+from pgbackup import pgdump, timestamped_db_name
 
 def backup(url, bucket):
     with BytesIO(pgdump.dump(url)) as data:
