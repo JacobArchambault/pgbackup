@@ -1,6 +1,6 @@
 import pytest
 
-from pgbackup import parser
+from pgbackup.cli import parser
 
 url = "postgres://bob@example.com:5432/db_one"
 

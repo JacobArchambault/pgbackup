@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from pgbackup import driver_action
+from pgbackup.cli import driver_action
 
 def create_parser():
     parser = ArgumentParser(description=""" 

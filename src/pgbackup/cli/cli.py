@@ -1,5 +1,5 @@
-
-from pgbackup import driver_action_dictionary, parser
+from pgbackup import driver_action_dictionary 
+from pgbackup.cli import parser
 
 
 def main():

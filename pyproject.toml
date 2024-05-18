@@ -18,7 +18,7 @@ dependencies = [
 Homepage = "https://github.com/jacobarchambault/pgbackup"
 
 [project.scripts]
-pgbackup = "pgbackup.cli:main"
+pgbackup = "pgbackup.cli.cli:main"
 
 [build-system]
 requires = ["pdm-backend"]
