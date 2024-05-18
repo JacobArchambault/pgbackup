@@ -1,7 +1,6 @@
-import pytest
-from unittest.mock import patch, MagicMock
 from io import BytesIO
 from pgbackup.s3_storage import backup
+from unittest.mock import patch, MagicMock
 
 @patch('pgbackup.s3_storage.client')
 @patch('pgbackup.s3_storage.pgdump.dump')

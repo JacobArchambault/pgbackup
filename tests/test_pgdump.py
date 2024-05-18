@@ -1,5 +1,5 @@
-import pytest
 from pgbackup.pgdump import dump
+import pytest
 
 url = "postgres://localhost/mydatabase"
 
