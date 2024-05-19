@@ -1,4 +1,4 @@
-from pgbackup.pgdump import dump
+from pgbackup.db.pgdump import dump
 import pytest
 
 url = "postgres://localhost/mydatabase"
@@ -27,11 +27,11 @@ class MockPopenFailure:
 
 @pytest.fixture
 def mock_popen_success(monkeypatch):
-    monkeypatch.setattr("pgbackup.pgdump.Popen", MockPopen)
+    monkeypatch.setattr("pgbackup.db.pgdump.Popen", MockPopen)
 
 @pytest.fixture
 def mock_popen_failure(monkeypatch):
-    monkeypatch.setattr("pgbackup.pgdump.Popen", MockPopenFailure)
+    monkeypatch.setattr("pgbackup.db.pgdump.Popen", MockPopenFailure)
 
 def test_dump_success(mock_popen_success):
     assert dump(url) == b"mocked stdout"

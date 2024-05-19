@@ -1,10 +1,10 @@
 from io import BytesIO
-from pgbackup.s3_storage import backup
+from pgbackup.storage.s3_storage import backup
 from unittest.mock import patch, MagicMock
 
-@patch('pgbackup.s3_storage.client')
-@patch('pgbackup.s3_storage.pgdump.dump')
-@patch('pgbackup.s3_storage.timestamped_db_name.get')
+@patch('pgbackup.storage.s3_storage.client')
+@patch('pgbackup.storage.s3_storage.pgdump.dump')
+@patch('pgbackup.storage.s3_storage.timestamped_db_name.get')
 def test_backup(mock_get, mock_dump, mock_client):
     # Arrange
     mock_dump.return_value = b"mocked pg_dump data"

@@ -1,4 +1,4 @@
-from pgbackup import pgdump
+from pgbackup.db import pgdump
 
 def backup(url, destination):
     dumped_data = pgdump.dump(url)

@@ -1,4 +1,4 @@
-from pgbackup import timestamped_db_name
+from pgbackup.db import timestamped_db_name
 
 url = "postgres://bob:password@example.com:5432/db_one?connect_timeout=10"
 

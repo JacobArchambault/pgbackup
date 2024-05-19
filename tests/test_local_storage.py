@@ -1,11 +1,11 @@
-from pgbackup import local_storage
+from pgbackup.storage import local_storage
 
 url = 'postgresql://user:password@localhost/dbname'
 destination = 'backup.sql'
 
 def test_backup(mocker):
     # Arrange
-    mock_pgdump = mocker.patch('pgbackup.pgdump.dump')
+    mock_pgdump = mocker.patch('pgbackup.db.pgdump.dump')
     mock_open = mocker.patch('builtins.open', mocker.mock_open())
     mock_pgdump.return_value = b'simulated database dump'
 
