@@ -1,5 +1,6 @@
-[tool.pdm]
-package-dir = "src"
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
 
 [project]
 name = "pgbackup"
@@ -20,6 +21,11 @@ Homepage = "https://github.com/jacobarchambault/pgbackup"
 [project.scripts]
 pgbackup = "pgbackup.cli.cli:main"
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+[tool.pdm]
+package-dir = "src"
+includes = [
+    "src/pgbackup/**/*.py"
+]
+excludes = [
+    "src/pgbackup/**/test_*.py"
+]
