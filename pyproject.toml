@@ -22,10 +22,6 @@ Homepage = "https://github.com/jacobarchambault/pgbackup"
 pgbackup = "pgbackup.cli.cli:main"
 
 [tool.pdm.build]
-package-dir = "src"
-includes = [
-    "src/pgbackup/**/*.py"
-]
 excludes = [
-    "src/pgbackup/**/test_*.py"
+    "src/**/test_*.py"
 ]
