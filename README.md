@@ -54,7 +54,7 @@ To update the list of pinned dependencies provided in requirements.txt, (cf. [li
 ## About
 This project is forked from https://github.com/linuxacademy/content-python3-sysadmin/tree/master/pgbackup . This version includes the following updates and improvements:
 1. A `pyproject.toml` file built with `pdm` in place of the original project's `setup.py`. 
-2. replacement of the original file's reliance on `Pipenv` and `Pipenv.lock` files with a `pip-tools`-based `requirements.in` and `requirements.txt`. 
+2. replacement of the original project's reliance on `Pipenv` and `Pipenv.lock` files with a `pip-tools`-based `requirements.in` and `requirements.txt`. 
 3. A trimmed, podman-compatible db_setup.sh file with fewer rows inserted into the sample database's `EMPLOYEES` table to minimize AWS S3 storage costs.
 4. A more comprehensive `README`. 
 5. More targeted imports using `from _ import _ ` over `import _` to decrease project size.
@@ -65,4 +65,4 @@ To run tests from within a virtual environment, you'll need to run the following
 1.  `pip install -e .`
 2. `pip install pytest` to install pytest, a popular python testing framework
 3. `pip install pytest-mock` to install a plugin for pytest allowing the use of `mocker` as a parameter to create mocks.
-4. `pytest ./tests/` to run the test suite
+4. `pytest` to run the test suite
